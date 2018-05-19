@@ -27,7 +27,7 @@ with open('OktaPasswordHealth.csv', 'r') as csvfile:
 		else:
 			external_users.append(email)
 
-# run function
+# call function
 write_csv('internal_users.csv', internal_users)
 write_csv('external_users.csv', external_users)
 
