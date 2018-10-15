@@ -7,7 +7,7 @@ external_users.csv
 
 based on their email address
 
-*** instructions ***
+## instructions
 
 download "OktaPasswordHealth.csv" and sort_okta_users_internal_external.py to the same directory
 type "python sort_okta_users_internal_external.py"
