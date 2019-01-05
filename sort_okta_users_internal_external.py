@@ -13,6 +13,7 @@ EXTERNAL_USERS = []
 
 # define write_csv function
 def write_csv(a, b):
+    """ write results to csv """
     with open(a, 'wb') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(['email'])
