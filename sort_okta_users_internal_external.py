@@ -5,7 +5,7 @@ import csv
 
 # prompt user
 print "What is your fully qualified domain name?"
-domain = raw_input()
+DOMAIN = raw_input()
 
 # create lists to be populated later
 internal_users = []
@@ -25,7 +25,7 @@ with open('OktaPasswordHealth.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
         email = row['Login']
-        if email.endswith(domain):
+        if email.endswith(DOMAIN):
             internal_users.append(email)
         else:
             external_users.append(email)
