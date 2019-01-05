@@ -8,7 +8,7 @@ print "What is your fully qualified domain name?"
 DOMAIN = raw_input()
 
 # create lists to be populated later
-internal_users = []
+INTERNAL_USERS = []
 external_users = []
 
 # define write_csv function
@@ -31,7 +31,7 @@ with open('OktaPasswordHealth.csv', 'r') as csvfile:
             external_users.append(email)
 
 # call function
-write_csv('internal_users.csv', internal_users)
+write_csv('internal_users.csv', INTERNAL_USERS)
 write_csv('external_users.csv', external_users)
 
 # update user
