@@ -12,18 +12,18 @@ INTERNAL_USERS = []
 EXTERNAL_USERS = []
 
 # define write_csv function
-def write_csv(a, b):
+def write_csv(csv_file, lst):
     """ write results to csv """
-    with open(a, 'wb') as csvfile:
-        writer = csv.writer(csvfile)
+    with open(csv_file, 'wb') as out_csvfile:
+        writer = csv.writer(out_csvfile)
         writer.writerow(['email'])
-        for email in b:
+        for email in lst:
             writer.writerow([email])
 
 # open csv and sort users into two lists (internal_users and external_users)
 # based on their email addresses
-with open('OktaPasswordHealth.csv', 'r') as csvfile:
-    READER = csv.DictReader(csvfile)
+with open('OktaPasswordHealth.csv', 'r') as in_csvfile:
+    READER = csv.DictReader(in_csvfile)
     for row in READER:
         email = row['Login']
         if email.endswith(DOMAIN):
