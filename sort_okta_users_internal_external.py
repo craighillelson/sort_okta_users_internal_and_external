@@ -25,11 +25,11 @@ def write_csv(csv_file, lst):
 with open('OktaPasswordHealth.csv', 'r') as in_csvfile:
     READER = csv.DictReader(in_csvfile)
     for row in READER:
-        email = row['Login']
-        if email.endswith(DOMAIN):
-            INTERNAL_USERS.append(email)
+        user_email = row['Login']
+        if user_email.endswith(DOMAIN):
+            INTERNAL_USERS.append(user_email)
         else:
-            EXTERNAL_USERS.append(email)
+            EXTERNAL_USERS.append(user_email)
 
 # call function
 write_csv('internal_users.csv', INTERNAL_USERS)
