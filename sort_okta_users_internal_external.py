@@ -17,7 +17,8 @@ def write_csv(a, b):
         for email in b:
             writer.writerow([email])
 
-# open csv and sort users into two lists (internal_users and external_users) based on their email addresses
+# open csv and sort users into two lists (internal_users and external_users)
+# based on their email addresses
 with open('OktaPasswordHealth.csv', 'r') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
