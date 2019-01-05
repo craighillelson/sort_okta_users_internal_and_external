@@ -9,7 +9,7 @@ DOMAIN = raw_input()
 
 # create lists to be populated later
 INTERNAL_USERS = []
-external_users = []
+EXTERNAL_USERS = []
 
 # define write_csv function
 def write_csv(a, b):
@@ -28,11 +28,11 @@ with open('OktaPasswordHealth.csv', 'r') as csvfile:
         if email.endswith(DOMAIN):
             internal_users.append(email)
         else:
-            external_users.append(email)
+            EXTERNAL_USERS.append(email)
 
 # call function
 write_csv('internal_users.csv', INTERNAL_USERS)
-write_csv('external_users.csv', external_users)
+write_csv('external_users.csv', EXTERNAL_USERS)
 
 # update user
 print "'internal_users.csv' and 'external_users.csv' exported successfully"
