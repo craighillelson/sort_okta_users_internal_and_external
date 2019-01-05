@@ -1,9 +1,9 @@
+# import
+import csv
+
 # prompt user
 print "What is your fully qualified domain name?"
 domain = raw_input()
-
-# import
-import csv
 
 # create lists to be populated later
 internal_users = []
