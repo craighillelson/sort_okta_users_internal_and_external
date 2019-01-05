@@ -23,8 +23,8 @@ def write_csv(a, b):
 # open csv and sort users into two lists (internal_users and external_users)
 # based on their email addresses
 with open('OktaPasswordHealth.csv', 'r') as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
+    READER = csv.DictReader(csvfile)
+    for row in READER:
         email = row['Login']
         if email.endswith(DOMAIN):
             INTERNAL_USERS.append(email)
