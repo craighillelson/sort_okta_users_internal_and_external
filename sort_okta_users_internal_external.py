@@ -26,7 +26,7 @@ with open('OktaPasswordHealth.csv', 'r') as csvfile:
     for row in reader:
         email = row['Login']
         if email.endswith(DOMAIN):
-            internal_users.append(email)
+            INTERNAL_USERS.append(email)
         else:
             EXTERNAL_USERS.append(email)
 
