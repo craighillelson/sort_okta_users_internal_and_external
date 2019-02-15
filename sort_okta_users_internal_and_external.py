@@ -2,7 +2,6 @@
 
 # import
 import csv
-# import re
 
 # prompt user
 print("What is your fully qualified domain name?")
@@ -18,8 +17,7 @@ def write_csv(csv_file, lst):
     with open(csv_file, 'w') as out_csvfile:
         writer = csv.writer(out_csvfile)
         writer.writerow(['email'])
-        for email in lst:
-            writer.writerow([email])
+        [writer.writerow([email]) for email in lst]
 
 # open csv and sort users into two lists (internal_users and external_users)
 # based on their email addresses
