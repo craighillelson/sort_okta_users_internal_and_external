@@ -17,7 +17,9 @@ def write_csv(csv_file, lst):
     with open(csv_file, 'w') as out_csvfile:
         writer = csv.writer(out_csvfile)
         writer.writerow(['email'])
-        [writer.writerow([email]) for email in lst]
+        for email in lst:
+            writer.writerow([email])
+
 
 # open csv and sort users into two lists (internal_users and external_users)
 # based on their email addresses
