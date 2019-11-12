@@ -20,7 +20,6 @@ def write_csv(csv_file, lst):
         for email in lst:
             writer.writerow([email])
 
-
 # open csv and sort users into two lists (internal_users and external_users)
 # based on their email addresses
 with open('OktaPasswordHealth.csv', 'r') as in_csvfile:
