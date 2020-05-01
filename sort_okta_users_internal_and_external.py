@@ -1,4 +1,4 @@
-""" __doc__ """
+"""Import 'OktaPasswordHealth.csv' and sort users into internal and external groups."""
 
 # import
 import csv
@@ -13,7 +13,7 @@ EXTERNAL_USERS = []
 
 # define write_csv function
 def write_csv(csv_file, lst):
-    """ write results to csv """
+    """Write results to a csv."""
     with open(csv_file, 'w') as out_csvfile:
         writer = csv.writer(out_csvfile)
         writer.writerow(['email'])
