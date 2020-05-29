@@ -1,17 +1,14 @@
 """Import 'OktaPasswordHealth.csv' and sort users into internal and external groups."""
 
-# import
 import csv
 
-# prompt user
 print("What is your fully qualified domain name?")
 DOMAIN = input()
 
-# create lists to be populated later
 INTERNAL_USERS = []
 EXTERNAL_USERS = []
 
-# define write_csv function
+
 def write_csv(csv_file, lst):
     """Write results to a csv."""
     with open(csv_file, 'w') as out_csvfile:
@@ -20,8 +17,7 @@ def write_csv(csv_file, lst):
         for email in lst:
             writer.writerow([email])
 
-# open csv and sort users into two lists (internal_users and external_users)
-# based on their email addresses
+
 with open('OktaPasswordHealth.csv', 'r') as in_csvfile:
     READER = csv.DictReader(in_csvfile)
     for row in READER:
@@ -31,9 +27,6 @@ with open('OktaPasswordHealth.csv', 'r') as in_csvfile:
         else:
             EXTERNAL_USERS.append(user_email)
 
-# call function
 write_csv('internal_users.csv', INTERNAL_USERS)
 write_csv('external_users.csv', EXTERNAL_USERS)
-
-# update user
 print("'internal_users.csv' and 'external_users.csv' exported successfully")
